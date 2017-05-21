@@ -1,0 +1,12 @@
+com\udea\matriculamaven\facades\UploadImageFacade.class
+com\udea\matriculamaven\pojos\Usuario_.class
+com\udea\matriculamaven\facades\UploadImageFacadeLocal.class
+com\udea\matriculamaven\facades\UsuarioFacadeLocal.class
+com\udea\matriculamaven\bean\imagenBean.class
+com\udea\matriculamaven\bean\captchaBean.class
+com\udea\matriculamaven\pojos\Usuario.class
+com\udea\matriculamaven\facades\AbstractFacade.class
+com\udea\matriculamaven\pojos\UploadImage_.class
+com\udea\matriculamaven\pojos\UploadImage.class
+com\udea\matriculamaven\bean\estudianteBean.class
+com\udea\matriculamaven\facades\UsuarioFacade.class

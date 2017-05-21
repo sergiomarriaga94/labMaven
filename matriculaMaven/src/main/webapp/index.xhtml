@@ -1,0 +1,126 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <link href="css/style.css" rel="stylesheet" type="text/css" />
+        <title><h:outputText value="#{msg.titulo}" /></title>
+        <script name="jquery/jquery.js" library="primefaces"></script>
+    </h:head>
+    <h:body>
+        
+        <br />
+        <h:link outcome="result" value="Primefaces welcome page" />
+         
+        
+        <p:layout fullPage="true">
+
+                <p:layoutUnit position="north" size="100" resizable="true" closable="true" collapsible="true">
+                    Matricula de estudiantes
+                    <div class="ui-fluid">
+                    <h:form>
+                        <h:commandButton action="#{estudianteBean.cambiolenguaje(lenguaje)}" value="English" image="resources/Usa.png"/>
+                        <h:commandButton action="#{estudianteBean.cambiolenguaje('es')}" value="Español" image="resources/spain.png"/>
+                    </h:form>
+                 </div>
+                   
+                </p:layoutUnit>
+
+                <p:layoutUnit position="south" size="100" closable="true" collapsible="true">
+                    creado por Sergio Marriaga
+                </p:layoutUnit>
+
+                
+
+                <p:layoutUnit position="center">
+                    Welcome to PrimeFaces
+                   
+        <h:form prependId="false" enctype="multipart/form-data">
+            <p:panel id="panel" header="nuevo estudiante">
+
+            <h:panelGrid columns="3">
+                <p:outputLabel value="#{msg.cedula}" for="cedula"/>
+                <p:inputText id="cedula" label="#{msg.cedula}" value="#{imagenBean.cedula}" required="true">
+                    <f:attribute name="requiredMessage" value="#{msg.cedula}"/>
+                    <f:validateLength minimum="2"/>
+                </p:inputText>
+                <p:message for="cedula" styleClass="errormsg" />
+                
+                
+                <p:outputLabel value="#{msg.nombreEstudiante}" for="nombre"/>
+                <p:inputText id="nombre" label="#{msg.nombreEstudiante}" value="#{imagenBean.nombre}" required="true">
+                    <f:attribute name="requiredMessage" value="#{msg.nombreEstudiante}"/>
+                    <f:validateLength minimum="2"/>
+                </p:inputText>
+                <p:message for="nombre" styleClass="errormsg" />
+                
+                <p:outputLabel value="#{msg.apellidosEstudiante}" for="apellidos"/>
+                <p:inputText id="apellidos" label="#{msg.apellidosEstudiante}" value="#{imagenBean.apellidos}" required="true">
+                    <f:attribute name="requiredMessage" value="#{msg.apellidosEstudiante}"/>
+                    <f:validateLength minimum="2"/>
+                </p:inputText>
+                <p:message for="apellidos" styleClass="errormsg" />
+                
+                <p:outputLabel value="#{msg.telefono}" for="telefono"/>
+                <p:inputText id="telefono" label="#{msg.telefono}" value="#{imagenBean.telefono}" required="true">
+                    <f:attribute name="requiredMessage" value="#{msg.telefono}"/>
+                    <f:validateLength minimum="2"/>
+                </p:inputText>
+                <p:message for="telefono" styleClass="errormsg" />
+                
+                <p:outputLabel value="#{msg.celular}" for="celular"/>
+                <p:inputText id="celular" label="#{msg.celular}" value="#{imagenBean.celular}" required="true">
+                    <f:attribute name="requiredMessage" value="#{msg.celular}"/>
+                    <f:validateLength minimum="2"/>
+                </p:inputText>
+                <p:message for="celular" styleClass="errormsg" />
+                
+                <p:outputLabel value="#{msg.ciudad}" for="ciudad"/>
+                <p:inputText id="ciudad" label="#{msg.ciudad}" value="#{imagenBean.ciudad}" required="true">
+                    <f:attribute name="requiredMessage" value="#{msg.ciudad}"/>
+                    <f:validateLength minimum="2"/>
+                </p:inputText>
+                <p:message for="ciudad" styleClass="errormsg" />
+                
+                <p:outputLabel value="#{msg.departamento}" for="departamento"/>
+                <p:inputText id="departamento" label="#{msg.departamento}" value="#{imagenBean.departamento}" required="true">
+                    <f:attribute name="requiredMessage" value="#{msg.departamento}"/>
+                    <f:validateLength minimum="2"/>
+                </p:inputText>
+                <p:message for="departamento" styleClass="errormsg" />
+                
+                <p:outputLabel value="#{msg.madre}" for="nombre_madre"/>
+                <p:inputText id="nombre_madre" label="#{msg.madre}" value="#{imagenBean.madre}" required="true">
+                    <f:attribute name="requiredMessage" value="#{msg.madre}"/>
+                    <f:validateLength minimum="2"/>
+                </p:inputText>
+                <p:message for="nombre_madre" styleClass="errormsg" />
+                
+                <p:outputLabel value="#{msg.padre}" for="nombre_padre"/>
+                <p:inputText id="nombre_padre" label="#{msg.padre}" value="#{imagenBean.padre}" required="true">
+                    <f:attribute name="requiredMessage" value="#{msg.padre}"/>
+                    <f:validateLength minimum="2"/>
+                </p:inputText>
+                <p:message for="nombre_padre" styleClass="errormsg" />
+                
+                <p:messages id="mensaje"/>
+                <p:captcha id="captcha"></p:captcha>
+                <p:commandButton value="Check" actionListener="#{captchaBean.check()}" update="panel" ajax="false"></p:commandButton>
+            
+            </h:panelGrid>
+            
+                        <p:growl showDetail="true"/>
+                        <h1>Subir foto del estudiante </h1>
+                        <p:fileUpload value="#{imagenBean.file}" mode="simple" label="Seleccionar imagen"/>
+                        <p:commandButton value="subir" actionListener="#{imagenBean.upload()}" action="submit" ajax="false"/>
+                        </p:panel>
+                    </h:form>
+                </p:layoutUnit>
+
+            </p:layout>
+        
+    </h:body>
+</html>
+
